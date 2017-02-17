@@ -14,7 +14,7 @@ class TodoApp extends React.Component {
   }
 
   clickHandle (e) {
-    if (e.keyCode === 13) {
+    if (e.keyCode === 13  && e.target.value.length > 0) {
       let projects = this.state.projects;
       let todos = this.state.todo;
       projects.push(e.target.value);
