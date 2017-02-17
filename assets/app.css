@@ -3,8 +3,24 @@ body {
 	background: #ddd;
 }
 
+.header {
+  background: #fff;
+  padding: 20px 50px;
+  margin-bottom: 20px;
+}
+
+label {
+  margin-right: 15px;
+}
+
+input {
+  padding: 8px;
+  outline: none;
+  border: 0px;
+}
+
 .block {
-	margin: 0px;
+	margin: 20px 0px;
 	width: 90%;
 	border: 1px solid #f0f0f0;
 	position: relative;
@@ -14,7 +30,7 @@ body {
 
 .block-header {
 	background: #999;
-	padding: 15px;
+	padding: 11px;
 }
 
 .block-header h3 {
@@ -29,6 +45,13 @@ body {
 	background: #fff;
 	text-align: center;
 	padding: 9px;
+  font-size: 12px;
+}
+
+.count-bar.total {
+  top: 31px;
+  background: #999;
+  color: #fff;
 }
 
 ul {
@@ -43,12 +66,19 @@ li {
 	cursor: move;
 }
 
+.done li:before {
+  content: '✓';
+  padding: 0px 5px;
+}
+
 .in-progress li {
 	background-color: orange;
+  color: #fff;
 }
 
 .done li {
 	background-color: limegreen;
+  color: #fff;
 }
 
 .light {

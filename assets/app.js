@@ -1,4 +1,4 @@
-class TodoApp extends React.Component {
+class TaskManagementApp extends React.Component {
 
   constructor (props) {
     super(props);
@@ -41,25 +41,29 @@ class TodoApp extends React.Component {
   render () {
     return (
       <div className="wholeApp">
+      <div className="header container-fluid">
+        <div className="row">
+          <div className="col-xs-12">
+            <h1> Task Management </h1>
+          </div>
+        </div>
+      </div>
         <div className="container">
           <div className="row">
-              <h1> TodoApp </h1>
-              Add Project :
+              <label>Add Project</label>
               <input type="text"
               onChange={this.clickHandle.bind(this)}
               onKeyUp={this.clickHandle.bind(this)}
               value={this.state.projectVal}
               placeholder="Name"/>
-
-              <br/><br/>
-              <div className="count-bar">
+              <div className="count-bar total">
                 {this.state.projects.length} <br/> Projects
               </div>
             </div>
         </div>
         <div className="container todo-board">
           <div className="row" onDragOver={this.dragOver.bind(this)}>
-              <div className="col-xs-4" data-type="todo">
+              <div className="col-sm-4" data-type="todo">
                 <div className="todo block" data-type="todo">
                   <div className="block-header" data-type="todo">
                     <h3 data-type="todo">To do </h3>
@@ -88,7 +92,7 @@ class TodoApp extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="col-xs-4" data-type="progress">
+              <div className="col-sm-4" data-type="progress">
                 <div className="in-progress block" data-type="progress">
                     <div className="block-header" data-type="progress">
                       <h3 data-type="progress">  InProgress </h3>
@@ -119,7 +123,7 @@ class TodoApp extends React.Component {
                     </div>
                 </div>
               </div>
-              <div className="col-xs-4" data-type="done">
+              <div className="col-sm-4" data-type="done">
                 <div className="done block" data-type="done">
                     <div className="block-header" data-type="done">
                       <h3 data-type="done">  Done </h3>
@@ -230,6 +234,6 @@ class ProjectItem extends React.Component {
 }
 
 ReactDOM.render(
-		<TodoApp/>,
+		<TaskManagementApp/>,
 		document.getElementById('root')
 	);
