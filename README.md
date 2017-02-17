@@ -1,3 +1,3 @@
 # zendesk-task-react
 
-<a href="index.html">View demo</a>
+<a href="https://krishcdbry.github.io/zendesk-task-react/">View demo</a>
