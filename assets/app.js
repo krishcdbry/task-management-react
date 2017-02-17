@@ -1,76 +1,3 @@
-class ProjectItem extends React.Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
-      list : this.props.list,
-      id: this.props.id
-    }
-  }
-
-  dragEnd(e) {
-      e.preventDefault();
-      let parent = this._reactInternalInstance._currentElement._owner._instance;
-      let parentState = parent.state;
-      let source = this.dragged.dataset;
-      let newList = this.state.list;
-      let dest = this.props.over;
-
-      if (Object.keys(this.props.over).length > 0) {
-        if (this.props.over.type !== this.state.id) {
-            newList.splice(source.id, 1);
-            this.setState({
-              list: newList
-            })
-
-            var destList = parentState[this.props.over.type];
-            destList.splice(this.props.over.id, 0, source.elem);
-            var listKey = this.props.over.type;
-            parent.setState({
-              listKey: destList
-            })
-        }
-        else if (this.props.over.type === this.state.id) {
-            dest = this.over.dataset;
-            newList.splice(source.id, 1);
-            newList.splice(dest.id, 0, source.elem);
-            this.setState({
-              list: newList
-            })
-        }
-    }
-  }
-
-  dragStart(e) {
-    this.dragged = e.currentTarget;
-    e.dataTransfer.effectAllowed = 'move';
-  }
-
-  dragOver(e) {
-    this.over = e.target;
-  }
-
-  render () {
-    return (
-      <ul onDragOver={this.dragOver.bind(this)}>
-        {this.state.list.map(function(item, index) {
-          return (
-            <li data-id={index}
-            data-type={this.state.id}
-            data-elem={item}
-            key={index}
-            draggable="true"
-            onDragEnd={this.dragEnd.bind(this)}
-            onDragStart={this.dragStart.bind(this)}>
-              {item}
-            </li>
-            )
-          }.bind(this))}
-      </ul>
-    )
-  }
-}
-
 class TodoApp extends React.Component {
 
   constructor (props) {
@@ -88,8 +15,8 @@ class TodoApp extends React.Component {
 
   clickHandle (e) {
     if (e.keyCode === 13) {
-      var projects = this.state.projects;
-      var todos = this.state.todo;
+      let projects = this.state.projects;
+      let todos = this.state.todo;
       projects.push(e.target.value);
       todos.push(e.target.value);
       this.setState({
@@ -229,6 +156,78 @@ class TodoApp extends React.Component {
   }
 }
 
+class ProjectItem extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      list : this.props.list,
+      id: this.props.id
+    }
+  }
+
+  dragEnd(e) {
+      e.preventDefault();
+      let parent = this._reactInternalInstance._currentElement._owner._instance;
+      let parentState = parent.state;
+      let source = this.dragged.dataset;
+      let newList = this.state.list;
+      let dest = this.props.over;
+
+      if (Object.keys(this.props.over).length > 0) {
+        if (this.props.over.type !== this.state.id) {
+            newList.splice(source.id, 1);
+            this.setState({
+              list: newList
+            })
+
+            var destList = parentState[this.props.over.type];
+            destList.splice(this.props.over.id, 0, source.elem);
+            var listKey = this.props.over.type;
+            parent.setState({
+              listKey: destList
+            })
+        }
+        else if (this.props.over.type === this.state.id) {
+            dest = this.over.dataset;
+            newList.splice(source.id, 1);
+            newList.splice(dest.id, 0, source.elem);
+            this.setState({
+              list: newList
+            })
+        }
+    }
+  }
+
+  dragStart(e) {
+    this.dragged = e.currentTarget;
+    e.dataTransfer.effectAllowed = 'move';
+  }
+
+  dragOver(e) {
+    this.over = e.target;
+  }
+
+  render () {
+    return (
+      <ul onDragOver={this.dragOver.bind(this)}>
+        {this.state.list.map(function(item, index) {
+          return (
+            <li data-id={index}
+            data-type={this.state.id}
+            data-elem={item}
+            key={index}
+            draggable="true"
+            onDragEnd={this.dragEnd.bind(this)}
+            onDragStart={this.dragStart.bind(this)}>
+              {item}
+            </li>
+            )
+          }.bind(this))}
+      </ul>
+    )
+  }
+}
 
 ReactDOM.render(
 		<TodoApp/>,
