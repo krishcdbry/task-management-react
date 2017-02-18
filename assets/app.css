@@ -20,12 +20,12 @@ input {
 }
 
 .block {
-	margin: 20px 0px;
-	width: 90%;
-	border: 1px solid #f0f0f0;
-	position: relative;
-	background: #fff;
-	min-height: 90px;
+  margin: 20px 0px;
+  width: 90%;
+  position: relative;
+  background: #fff;
+  min-height: 90px;
+  box-shadow: 0px 3px 10px #bbb;
 }
 
 .block-header {
@@ -64,24 +64,28 @@ li {
 	padding: 15px 9px;
 	border-bottom: 1px solid #d0d0d0;
 	cursor: move;
+  word-wrap: break-word;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0px 0px 4px #d0d0d0;
+  border-left: 5px solid #999;
 }
 
 .done li:before {
-  content: '✓';
+   content:  "\2713 ";
   padding: 0px 5px;
 }
 
 .in-progress li {
-	background-color: orange;
-  color: #fff;
+border-left: 5px solid orange;
+
 }
 
 .done li {
-	background-color: limegreen;
-  color: #fff;
+border-left: 5px solid limegreen;
 }
 
 .light {
-	color: #999;
-	line-height: 2.2;
+  color: #999;
+  line-height: 2.2;
+  padding-bottom: 10px;
 }
