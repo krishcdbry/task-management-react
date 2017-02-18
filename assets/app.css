@@ -1,12 +1,13 @@
 body {
 	font-family: "Trebuchet MS";
-	background: #ddd;
+	background: #fff;
 }
 
 .header {
-  background: #fff;
+  background: #22a0ce;
   padding: 20px 50px;
   margin-bottom: 20px;
+  color: #fff;
 }
 
 label {
@@ -14,9 +15,10 @@ label {
 }
 
 input {
-  padding: 8px;
+  padding: 9px 5px;
   outline: none;
-  border: 0px;
+  border: 1px solid #ccc;
+  background: #fff;
 }
 
 .block {
@@ -30,18 +32,27 @@ input {
 
 .block-header {
 	background: #999;
-	padding: 11px;
+	padding: 16px;
 }
 
-.block-header h3 {
+.block-header h4 {
 	display: inline-block;
 	color: #fff;
 }
 
+.done .block-header {
+  background-color: limegreen;
+}
+
+.in-progress .block-header {
+  background-color: orange;
+}
+
+
 .count-bar {
 	position: absolute;
 	right: 10px;
-	top: 17px;
+	top: 12px;
 	background: #fff;
 	text-align: center;
 	padding: 9px;
@@ -50,8 +61,6 @@ input {
 
 .count-bar.total {
   top: 31px;
-  background: #999;
-  color: #fff;
 }
 
 ul {

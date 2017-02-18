@@ -48,16 +48,18 @@ class TaskManagementApp extends React.Component {
           </div>
         </div>
       </div>
+      <div className="count-bar total">
+        {this.state.projects.length} <br/> Projects
+      </div>
         <div className="container">
           <div className="row">
-              <label>Add Project</label>
-              <input type="text"
-              onChange={this.clickHandle.bind(this)}
-              onKeyUp={this.clickHandle.bind(this)}
-              value={this.state.projectVal}
-              placeholder="Name"/>
-              <div className="count-bar total">
-                {this.state.projects.length} <br/> Projects
+              <div className="col-xs-12">
+                <label>Add Project</label>
+                <input type="text"
+                onChange={this.clickHandle.bind(this)}
+                onKeyUp={this.clickHandle.bind(this)}
+                value={this.state.projectVal}
+                placeholder="Name"/>
               </div>
             </div>
         </div>
@@ -66,7 +68,7 @@ class TaskManagementApp extends React.Component {
               <div className="col-sm-4" data-type="todo">
                 <div className="todo block" data-type="todo">
                   <div className="block-header" data-type="todo">
-                    <h3 data-type="todo">To do </h3>
+                    <h4 data-type="todo">To do </h4>
                     <div className="count-bar" data-type="todo">{this.state.todo.length} <br/> PROJECTS</div>
                   </div>
                   <div className="block-body" data-type="todo">
@@ -95,7 +97,7 @@ class TaskManagementApp extends React.Component {
               <div className="col-sm-4" data-type="progress">
                 <div className="in-progress block" data-type="progress">
                     <div className="block-header" data-type="progress">
-                      <h3 data-type="progress">  InProgress </h3>
+                      <h4 data-type="progress">  InProgress </h4>
                       <div className="count-bar" data-type="progress">{this.state.progress.length} <br/> PROJECTS</div>
                     </div>
                     <div className="block-body" data-type="progress">
@@ -126,7 +128,7 @@ class TaskManagementApp extends React.Component {
               <div className="col-sm-4" data-type="done">
                 <div className="done block" data-type="done">
                     <div className="block-header" data-type="done">
-                      <h3 data-type="done">  Done </h3>
+                      <h4 data-type="done">  Done </h4>
                       <div className="count-bar" data-type="done">{this.state.done.length} <br/> PROJECTS</div>
                     </div>
                     <div className="block-body" data-type="done">
