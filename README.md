@@ -1,3 +1,5 @@
+# Task Management App (Zendesk)
+
 1. Entering text in the 'add project' input and hitting enter will add it as an item to the 'todo' list.
 2. Three columns for 'Todo', 'In Progress', and 'Done' projects.
 3. Projects are draggable and sortable within the same column.
