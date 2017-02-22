@@ -1,6 +1,6 @@
 # Task Management App 
 
-1. Entering text in the 'add project' input and hitting enter will add it as an item to the 'todo' list.
+1. Add projects and they will gets listed in 'Todo' coloumn.
 2. Three columns for 'Todo', 'In Progress', and 'Done' projects.
 3. Projects are draggable and sortable within the same column.
 4. Projects can also be dragged between adjacent columns.
