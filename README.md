@@ -1,4 +1,4 @@
-# Task Management App 
+# Tasker
 
 1. Add projects and they will gets listed in 'Todo' coloumn.
 2. Three columns for 'Todo', 'In Progress', and 'Done' projects.
